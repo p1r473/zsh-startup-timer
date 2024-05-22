@@ -5,8 +5,7 @@ seconds_to_milliseconds() {
     fi
     local seconds=$1
     local milliseconds=$(echo "$seconds * 1000" | bc)
-    echo "Startup time: $milliseconds ms"
+    printf "Startup time: %.3f ms\n" $milliseconds
 }
-
 typeset -F SECONDS
 seconds_to_milliseconds $SECONDS
